@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
-//        Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+        Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
         while (true) {
             System.out.println("Welcome to My Application");
             System.out.println("Select option:");
