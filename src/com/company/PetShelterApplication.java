@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class PetShelterApplication {
     private static final String DB_USERNAME = "postgres";
     private static final String DB_PASSWORD = "1593578246";
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/testDB";
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/petshelterDB";
 
     public static void start() throws SQLException {
         Scanner scanner = new Scanner(System.in);
