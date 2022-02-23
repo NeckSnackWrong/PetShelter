@@ -1,4 +1,4 @@
-package com.company;
+package com.company.entities;
 
 public class user {
     private String name;

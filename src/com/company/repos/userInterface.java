@@ -1,6 +1,6 @@
 package com.company.repos;
 
-import com.company.user;
+import com.company.entities.user;
 
 import java.util.List;
 

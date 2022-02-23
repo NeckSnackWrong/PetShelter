@@ -1,7 +1,7 @@
 package com.company.repos;
 
 import com.company.data.DBinterface.DataBaseInterface;
-import com.company.user;
+import com.company.entities.user;
 
 import java.sql.*;
 import java.util.LinkedList;

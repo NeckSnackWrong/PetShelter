@@ -1,7 +1,7 @@
 package com.company.controllers;
 
 import com.company.repos.userInterface;
-import com.company.user;
+import com.company.entities.user;
 
 import java.util.List;
 
