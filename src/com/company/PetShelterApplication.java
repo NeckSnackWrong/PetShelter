@@ -30,6 +30,8 @@ public class PetShelterApplication {// creation of class
             System.out.println("3.Add new donator");
             System.out.println("4.Get shelters by location");
             System.out.println("5.Get shelters by id");
+            System.out.println("6.Get pets list");
+            System.out.println("7.Get pets by id");
             System.out.println("0.Exit");
             System.out.println();//Menu items
             try {//use of trycatch to avoid errors
@@ -113,20 +115,49 @@ public class PetShelterApplication {// creation of class
                     }
                 }
                 else if (option == 5) {//conditional operator for user's choice of 5th menu item
-                        String SQL_SELECT_SH_ID = "SELECT * FROM public.\"shelters\" WHERE id = ?;";
-                        PreparedStatement prepareStatement = connection.prepareStatement(SQL_SELECT_SH_ID);//Usage of PreparedStatement operator
+                    String SQL_SELECT_SH_ID = "SELECT * FROM public.\"shelters\" WHERE id = ?;";
+                    PreparedStatement prepareStatement = connection.prepareStatement(SQL_SELECT_SH_ID);//Usage of PreparedStatement operator
 
-                        System.out.println("Please, enter id of the shelter:");//output of request to input data
-                        int id = scanner.nextInt();//Saving via scanner of entered data
-                        prepareStatement.setInt(1, id);//substitution of saved data in preparestatement
+                    System.out.println("Please, enter id of the shelter:");//output of request to input data
+                    int id = scanner.nextInt();//Saving via scanner of entered data
+                    prepareStatement.setInt(1, id);//substitution of saved data in preparestatement
 
-                        ResultSet rs = prepareStatement.executeQuery();//Saving of results which would be sent to database
-                        while(rs.next()) {//loop which allows to send all data
-                            System.out.println(rs.getInt("id") + " " +
-                                    rs.getString("name") + " " +
-                                    rs.getString("location"));//output to console of results
-                        }
+                    ResultSet rs = prepareStatement.executeQuery();//Saving of results which would be sent to database
+                    while (rs.next()) {//loop which allows to send all data
+                        System.out.println(rs.getInt("id") + " " +
+                                rs.getString("name") + " " +
+                                rs.getString("location"));//output to console of results
                     }
+                }
+               else if (option == 6) {//conditional operator for user's choice of 6th menu item
+                    Statement statement = connection.createStatement();//Using of Statement operator
+                    String SQL_SELECT_USERS = "SELECT t.*\n" +//declaring of line of sql code which would be sent to sql console
+                            "                     FROM public.\"pets\" t\n" +
+                            "                     LIMIT 501";
+                    ResultSet rs = statement.executeQuery(SQL_SELECT_USERS);//Saving of results which would be sent to database
+                    while (rs.next()) {//loop which allows to send all data
+                        System.out.println(rs.getInt("id") + " " +
+                                rs.getString("name") + " " +
+                                rs.getString("vid") + " " +
+                                "ShelterId: " + rs.getString("shelterID"));//output to console of results of 1st action
+                    }
+                    }
+                else if (option == 7) {//conditional operator for user's choice of 7th menu item
+                    String SQL_SELECT_SH_ID = "SELECT * FROM public.\"shelters\" WHERE id = ?;";
+                    PreparedStatement prepareStatement = connection.prepareStatement(SQL_SELECT_SH_ID);//Usage of PreparedStatement operator
+
+                    System.out.println("Please, enter id of the shelter:");//output of request to input data
+                    int id = scanner.nextInt();//Saving via scanner of entered data
+                    prepareStatement.setInt(1, id);//substitution of saved data in preparestatement
+
+                    ResultSet rs = prepareStatement.executeQuery();//Saving of results which would be sent to database
+                    while (rs.next()) {//loop which allows to send all data
+                        System.out.println(rs.getInt("id") + " " +
+                                rs.getString("name") + " " +
+                                rs.getString("vid") + " " +
+                                "ShelterId: " + rs.getString("shelterID"));//output to console of results of 1st action
+                    }
+                }
 
                  else {
                     break;
