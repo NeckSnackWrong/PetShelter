@@ -1,6 +1,6 @@
 package com.company.entities;
 
-public class pets {
+public class pets {//creating a class pets
     private String vid;
     private String name;
     private int id;
