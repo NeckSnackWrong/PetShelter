@@ -10,7 +10,7 @@ import static java.lang.System.in;
 public class PetShelterApplication {
     private static final String DB_USERNAME = "postgres";
     private static final String DB_PASSWORD = "1593578246";
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/petshelterDB";
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/petshelterDB"; //connecting database
 
     private final UserControl controller;
     public PetShelterApplication(UserControl controller) {
